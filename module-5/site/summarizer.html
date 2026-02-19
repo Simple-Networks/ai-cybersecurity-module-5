@@ -1,0 +1,37 @@
+```<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.ico">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/" class="nav-link">Chat</a>
+        <a href="/tools" class="nav-link">Tools</a>
+        <a href="/faq" class="nav-link">FAQ</a>
+        <a href="/summarizer" class="nav-link active">Summarizer</a>
+        <a href="/hr-stats" class="nav-link">HR Stats</a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Innovate Inc. HR Assistant - URL Summarizer</h1>
+        </header>
+        <main>
+            <div id="query-container">
+                <form id="summarize-form">
+                    <input type="url" id="url-input" class="rounded-input" placeholder="Enter a URL to summarize" required>
+                    <button type="submit" id="send-button">Summarize</button>
+                </form>
+            </div>
+            <div id="processing-indicator" style="display: none;">Processing...</div>
+            <div id="response-container">
+                <pre id="summary-output"></pre>
+            </div>
+        </main>
+    </div>
+    <script src="/static/summarizer.js"></script>
+</body>
+</html>

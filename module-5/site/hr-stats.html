@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Violations Statistics</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.ico">
+    <style>
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stats-table th,
+        .stats-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .stats-table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        .stats-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        .stats-table tr:last-child td {
+            border-bottom: none;
+        }
+        .severity-high {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .severity-medium {
+            color: #f57c00;
+            font-weight: bold;
+        }
+        .severity-low {
+            color: #388e3c;
+            font-weight: bold;
+        }
+        .total-summary {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        #error-message {
+            color: #d32f2f;
+            padding: 15px;
+            background-color: #ffebee;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/" class="nav-link">Chat</a>
+        <a href="/tools" class="nav-link">Tools</a>
+        <a href="/faq" class="nav-link">FAQ</a>
+        <a href="/summarizer" class="nav-link">Summarizer</a>
+        <a href="/hr-stats" class="nav-link active">HR Stats</a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Innovate Inc. HR Assistant - Violation Statistics</h1>
+        </header>
+        <main>
+            <div id="stats-container">
+                <button id="load-stats-button" type="button">Load HR Violations Statistics</button>
+                <div id="processing-indicator" style="display: none;">Loading statistics...</div>
+                <div id="error-message"></div>
+                <div id="results-container" style="display: none;">
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <!-- Headers will be dynamically generated -->
+                            </tr>
+                        </thead>
+                        <tbody id="stats-table-body">
+                        </tbody>
+                    </table>
+                    <div class="total-summary" id="total-summary"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/hr-stats.js"></script>
+</body>
+</html>
